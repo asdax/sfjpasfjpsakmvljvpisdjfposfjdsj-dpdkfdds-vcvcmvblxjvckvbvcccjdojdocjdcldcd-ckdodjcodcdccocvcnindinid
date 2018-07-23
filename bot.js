@@ -65,12 +65,10 @@ gg.send({embed : new Discord.RichEmbed()
     if(!mySupport) return message.reply('هذه الرتبة غير موجودة');
     if(mention.roles.has(mySupport)) return message.reply('هذا الشخص معه الرتبة مسبقا');
 
-    mention.addRole(mySupport).then(() => {
-      acRoom.send(`**[ ${mySupport} ] واعطائك رتبة ${mention} تم بنجاح قبولك**`);
-    });
+    message.member(mention.id).addRole(mySupport)
+     await acRoom.send(`**[ ${mySupport} ] واعطائك رتبة ${mention} تم بنجاح قبولك**`);
   }
 });
-
 
 
   client.on('message',async message => {
