@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- const prefix = "-";
+ const prefix = "~";
 
 
 
@@ -66,8 +66,7 @@ gg.send({embed : new Discord.RichEmbed()
         msg.reply(`تم قبول الشخص بنجاح`)
         person.addRole('471760400019619870').catch(console.error);
       }
-
-      let ownerrole = msg.guild.roles.find('name', '• ♛ MineCubes Owner ♛');
+	
       if (command == 'deny') {
         if (!msg.member.roles.has(ownerrole)) return;
         let person = msg.mentions.members.first()
@@ -85,7 +84,7 @@ client.on('ready', () => {
 
 
     const devs = ['326922071185817603' , '' , '' , ''];
-const adminprefix = "-";
+const adminprefix = "~";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
@@ -116,7 +115,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
   if(!message.channel.guild) return;
-if(message.content.startsWith('-bc')) {
+if(message.content.startsWith('~bc')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
