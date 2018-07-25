@@ -55,18 +55,18 @@ gg.send({embed : new Discord.RichEmbed()
       
       if(message.content.startsWith(prefix + "accept")) {
         if(!message.member.hasPermission('MANAGE_ROLES')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `MANAGE_ROLES`' );
-        let person = msg.mentions.members.first()
-        if (!person) return msg.reply(`عليك بمنشن احد الاشخاص`)
-        if (!person.roles.has('443324027046723585')) return msg.reply(`هذا الشخص ليس مقدم`)
+        let person = message.mentions.members.first()
+        if (!person) return message.reply(`عليك بمنشن احد الاشخاص`)
+        if (!person.roles.has('443324027046723585')) return message.reply(`هذا الشخص ليس مقدم`)
         msg.reply(`تم قبول الشخص بنجاح`)
         person.addRole('471760400019619870').catch(console.error);
       }
 	
       if(message.content.startsWith(prefix + "deny")) {
          if(!message.member.hasPermission('MANAGE_ROLES')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `MANAGE_ROLES`' );
-        let person = msg.mentions.members.first()
-        if (!person) return msg.reply(`عليك بمنشن احد الاشخاص`)
-        if (!person.roles.has('443324027046723585')) return msg.reply(`هذا الشخص ليس مقدم`)
+        let person = message.mentions.members.first()
+        if (!person) return message.reply(`عليك بمنشن احد الاشخاص`)
+        if (!person.roles.has('443324027046723585')) return message.reply(`هذا الشخص ليس مقدم`)
         msg.reply(`تم قبول الشخص بنجاح`)
       }
 
