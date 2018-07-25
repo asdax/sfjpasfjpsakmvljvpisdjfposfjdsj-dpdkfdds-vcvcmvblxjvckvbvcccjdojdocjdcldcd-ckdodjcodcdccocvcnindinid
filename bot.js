@@ -58,7 +58,7 @@ gg.send({embed : new Discord.RichEmbed()
         let person = message.mentions.members.first()
         if (!person) return message.reply(`عليك بمنشن احد الاشخاص`)
         message.reply(`تم قبول الشخص بنجاح`)
-        person.addRole('471774679602823184').catch(console.error);
+        person.addRole('• Support Discord').catch(console.error);
       }
 	
       if(message.content.startsWith(prefix + "deny")) {
