@@ -52,9 +52,9 @@ gg.send({embed : new Discord.RichEmbed()
     
 
 
-      let ownerrole = msg.guild.roles.find('name', '• ♛ MineCubes Owner ♛');
+      
       if(message.content.startsWith(prefix + "accept")) {
-        if (!msg.member.roles.has(ownerrole)) return;
+        if(!message.member.hasPermission('MANAGE_ROLES')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `MANAGE_ROLES`' );
         let person = msg.mentions.members.first()
         if (!person) return msg.reply(`عليك بمنشن احد الاشخاص`)
         if (!person.roles.has('443324027046723585')) return msg.reply(`هذا الشخص ليس مقدم`)
@@ -63,7 +63,7 @@ gg.send({embed : new Discord.RichEmbed()
       }
 	
       if(message.content.startsWith(prefix + "deny")) {
-        if (!msg.member.roles.has(ownerrole)) return;
+         if(!message.member.hasPermission('MANAGE_ROLES')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `MANAGE_ROLES`' );
         let person = msg.mentions.members.first()
         if (!person) return msg.reply(`عليك بمنشن احد الاشخاص`)
         if (!person.roles.has('443324027046723585')) return msg.reply(`هذا الشخص ليس مقدم`)
