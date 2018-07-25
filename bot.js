@@ -50,15 +50,10 @@ gg.send({embed : new Discord.RichEmbed()
 }
 
     
-  let command = msg.content.toLowerCase().split(' ')[0];
-	command = command.slice(prefix.length)
 
-  let args = msg.content.split(" ").slice(1);
-
-  if (command == 'apply' || command == 'deny')
 
       let ownerrole = msg.guild.roles.find('name', '• ♛ MineCubes Owner ♛');
-      if (command == 'accept') {
+      if(message.content.startsWith(prefix + "accept")) {
         if (!msg.member.roles.has(ownerrole)) return;
         let person = msg.mentions.members.first()
         if (!person) return msg.reply(`عليك بمنشن احد الاشخاص`)
@@ -67,7 +62,7 @@ gg.send({embed : new Discord.RichEmbed()
         person.addRole('471760400019619870').catch(console.error);
       }
 	
-      if (command == 'deny') {
+      if(message.content.startsWith(prefix + "deny")) {
         if (!msg.member.roles.has(ownerrole)) return;
         let person = msg.mentions.members.first()
         if (!person) return msg.reply(`عليك بمنشن احد الاشخاص`)
