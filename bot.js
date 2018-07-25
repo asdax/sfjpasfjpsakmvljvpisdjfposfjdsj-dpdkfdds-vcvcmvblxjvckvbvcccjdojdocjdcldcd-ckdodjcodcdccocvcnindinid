@@ -49,7 +49,13 @@ gg.send({embed : new Discord.RichEmbed()
 })
 }
 
+    
+  let command = msg.content.toLowerCase().split(' ')[0];
+	command = command.slice(prefix.length)
 
+  let args = msg.content.split(" ").slice(1);
+
+  if (command == 'apply' || command == 'deny')
 
       let ownerrole = msg.guild.roles.find('name', '• ♛ MineCubes Owner ♛');
       if (command == 'accept') {
