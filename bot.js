@@ -51,38 +51,24 @@ gg.send({embed : new Discord.RichEmbed()
 
 
 
+      let ownerrole = msg.guild.roles.find('name', '• ♛ MineCubes Owner ♛');
+      if (command == 'accept') {
+        if (!msg.member.roles.has(ownerrole)) return;
+        let person = msg.mentions.members.first()
+        if (!person) return msg.reply(`عليك بمنشن احد الاشخاص`)
+        if (!person.roles.has('443324027046723585')) return msg.reply(`هذا الشخص ليس مقدم`)
+        msg.reply(`تم قبول الشخص بنجاح`)
+        person.addRole('471760400019619870').catch(console.error);
+      }
 
-  client.on('message',async message => {
-  let mention = message.mentions.members.first();
-  let role = message.content.split(" ").slice(2).join(" ");
-  let mySupport = message.guild.roles.find('name',role);
-  let acRoom = client.channels.get('470661995255955477');
-  if(message.content.startsWith(prefix + "قبول")) {
-    if(message.guild.id !== '455577214348427264') return;
-    if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
-    if(!mention) return message.reply('منشن شخص');
-    if(!role) return message.reply('ادخل اسم رتبة');
-    if(!mySupport) return message.reply('هذه الرتبة غير موجودة');
-    if(mention.roles.has(mySupport)) return message.reply('هذا الشخص معه الرتبة مسبقا');
-
-    message.member(mention.id).addRole(mySupport)
-     await acRoom.send(`**[ ${mySupport} ] واعطائك رتبة ${mention} تم بنجاح قبولك**`);
-  }
-});
-
-
-  client.on('message',async message => {
-  let mention = message.mentions.members.first();
-  let acRoom = client.channels.get('470661995255955477');
-  if(message.content.startsWith(prefix + "رفض")) {
-  if(message.guild.id !== '455577214348427264') return;
-  if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
-  if(!mention) return message.reply("منشن شخص");
-
-  acRoom.send(`**${mention} تم رفضك للاسف**`)
-  }
-});
-;})
+      let ownerrole = msg.guild.roles.find('name', '• ♛ MineCubes Owner ♛');
+      if (command == 'deny') {
+        if (!msg.member.roles.has(ownerrole)) return;
+        let person = msg.mentions.members.first()
+        if (!person) return msg.reply(`عليك بمنشن احد الاشخاص`)
+        if (!person.roles.has('443324027046723585')) return msg.reply(`هذا الشخص ليس مقدم`)
+        msg.reply(`تم قبول الشخص بنجاح`)
+      }
 
 
 client.on('ready', () => {
@@ -162,7 +148,7 @@ msg.delete();
 })
 }
 });
-
+})
 
 
 
