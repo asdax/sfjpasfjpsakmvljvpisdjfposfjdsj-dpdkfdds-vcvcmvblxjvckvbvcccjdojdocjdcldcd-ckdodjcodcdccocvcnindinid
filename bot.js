@@ -65,7 +65,7 @@ gg.send({embed : new Discord.RichEmbed()
          if(!message.member.hasPermission('MANAGE_ROLES')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `MANAGE_ROLES`' );
         let person = message.mentions.members.first()
         if (!person) return message.reply(`عليك بمنشن احد الاشخاص`)
-        message.reply(`تم قبول الشخص بنجاح`)
+        message.reply(`تم رفض الشخص بنجاح`)
       }
 
 
