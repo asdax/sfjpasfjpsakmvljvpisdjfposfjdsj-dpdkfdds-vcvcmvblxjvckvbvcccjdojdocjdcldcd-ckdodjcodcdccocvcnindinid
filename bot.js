@@ -148,7 +148,52 @@ msg.delete();
 });
 })
 
+client.on('message', message => {
+     if (message.content === ('ip')) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+.addField("play.Mine-Cubes.com" , "MineCube")
+.setThumbnail(message.author.avatarURL)
+  message.channel.sendEmbed(embed);
+    }
+});
 
+
+
+
+client.on('message', message => {
+     if (message.content === ('IP')) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+.addField("play.Mine-Cubes.com" , "MineCube")
+.setThumbnail(message.author.avatarURL)
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+     if (message.content === ('Ip')) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+.addField("play.Mine-Cubes.com" , "MineCube")
+.setThumbnail(message.author.avatarURL)
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+     if (message.content === ('iP')) {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#8650a7")
+.addField("play.Mine-Cubes.com" , "MineCube")
+.setThumbnail(message.author.avatarURL)
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 client.login('NDcxMDE2Njc1OTMyODk3Mjgw.DjetDQ.nUCqeDh4_LPtzS6_i9vWy2XYZW8')
