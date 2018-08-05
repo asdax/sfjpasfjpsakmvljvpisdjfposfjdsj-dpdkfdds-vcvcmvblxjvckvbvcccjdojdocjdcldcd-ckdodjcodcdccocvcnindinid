@@ -53,22 +53,26 @@ gg.send({embed : new Discord.RichEmbed()
     
 
 
-      
-      if(message.content.startsWith(prefix + "accept")) {
-        if(!message.member.hasPermission('MANAGE_ROLES')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `MANAGE_ROLES`' );
-        let person = message.mentions.members.first()
-        if (!person) return message.reply(`عليك بمنشن احد الاشخاص`)
-        message.reply(`تم قبول الشخص بنجاح`)
-        person.addRole('• Support Discord').catch(console.error);
-      }
-	
-      if(message.content.startsWith(prefix + "deny")) {
-         if(!message.member.hasPermission('MANAGE_ROLES')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `MANAGE_ROLES`' );
-        let person = message.mentions.members.first()
-        if (!person) return message.reply(`عليك بمنشن احد الاشخاص`)
-        message.reply(`تم رفض الشخص بنجاح`)
-      }
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
 
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+
+
+if (command == "say") {
+let rank = message.guild.member(message.author).roles.find('name', '• ♛ MineCubes Owner ♛');
+if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
+  message.channel.send(args.join("  "))
+    message.delete();
+  }
+
+
+});
 
 client.on('ready', () => {
   console.log(`Logged in t8dem as ${client.user.tag}!`);
