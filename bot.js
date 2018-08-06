@@ -54,6 +54,8 @@ gg.send({embed : new Discord.RichEmbed()
 
 
 client.on('message', message => {
+     var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -65,8 +67,6 @@ client.on('message', message => {
 
 
 if (command == "say") {
-let rank = message.guild.member(message.author).roles.find('name', '• ♛ MineCubes Owner ♛');
-if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
   message.channel.send(args.join("  "))
     message.delete();
   }
